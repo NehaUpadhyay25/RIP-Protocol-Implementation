@@ -8,7 +8,7 @@ We will assume in this part of the project that the nodes cannot move, but may â
 It supports 1) active RIP as a router
 2) handling incoming route messages
 3) CIDR
-and 4) route message broadcasts.
+4) route message broadcasts.
 We assume that only RIPv2 is used.
 
 Also, the route update time is set to 5 seconds, not 30 seconds as defined in the RFC, to reduce the convergence time,
