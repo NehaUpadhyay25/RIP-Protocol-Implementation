@@ -1,0 +1,19 @@
+Project implements the routing protocol in Java.
+In this project, you will implement a distance-vector routing protocol called RIPv2.
+Each node on the network executes RIP to exchange routing information with its neighbors,
+and based on this information, a node computes the shortest paths from itself to all the
+other nodes and the external internet.
+We will assume in this part of the project that the nodes cannot move, but may “disappear” and “reappear”.
+
+It supports 1) active RIP as a router
+2) handling incoming route messages
+3) CIDR
+and 4) route message broadcasts.
+We assume that only RIPv2 is used.
+
+Also, the route update time is set to 5 seconds, not 30 seconds as defined in the RFC, to reduce the convergence time,
+and 10 seconds for a node to be determined as offline. If a node fails, other nodes should respond to recover routes
+if alternate routes are available. The neighbors of a failed node should detect that the failed node is indeed unreachable
+and set the appropriate distance to infinity. This information will be propagated to the entire network through the RIP
+routing protocol. As you probably know, triggered updates need to be invoked for fast recovery, and split horizon with
+poisoned reverse needs to run to prevent the count-to-infinity problem.
